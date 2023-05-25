@@ -1,0 +1,24 @@
+update this code in this path /vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+
+To achieve effective rate limiting, it is generally recommended to use a combination of both firewall-level rate limiting and application-level rate limiting. Each approach has its own benefits and considerations:
+
+    Firewall-Level Rate Limiting: Watch for updates using psSense!
+
+    Network-wide control: Firewall-level rate limiting allows you to control and manage traffic at the network perimeter, ensuring that rate limits are applied to all incoming or outgoing traffic.
+    Protection against DoS attacks: Firewall rate limiting can provide protection against volumetric DDoS attacks by limiting the number of connections or requests per second from specific IP addresses or subnets.
+    Prevents resource exhaustion: Firewall rate limiting can prevent resource exhaustion on your network or services by limiting the bandwidth, connections, or packets per second.
+
+    Application-Level Rate Limiting: This is exactly what we are doing. Actually you should have both.
+
+    Granular control: Application-level rate limiting allows you to have fine-grained control over rate limits for specific endpoints, APIs, or functionalities within your web application.
+    Protection against application-specific attacks: Application-level rate limiting can protect against attacks like brute-force login attempts, API abuse, or excessive requests targeting specific application components.
+    Customization and flexibility: Application-level rate limiting gives you the flexibility to define rate limits based on the specific requirements and behaviors of your application.
+
+Using both firewall-level and application-level rate limiting provides a layered defense strategy, offering complementary protections at different levels of the network stack. 
+This approach helps to mitigate various types of attacks and ensures that rate limits are applied both at the network perimeter and within the application itself.
+
+By implementing rate limiting at the firewall level, you can provide a first line of defense to protect your network and services from DoS attacks and limit the impact of abusive traffic. 
+Application-level rate limiting adds an additional layer of protection by enforcing rate limits specific to your application's endpoints or functionalities.
+
+It is important to strike the right balance between the two approaches, considering the needs of your network, the sensitivity of your application, and the desired level of control and protection.
+Regular monitoring, tuning, and adjusting of rate limiting settings in both the firewall and application can help maintain optimal performance and security.
